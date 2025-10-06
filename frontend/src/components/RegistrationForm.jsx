@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 import "../styles/form.css";
 
 export default function RegistrationForm({ referrer }) {
@@ -14,13 +15,18 @@ export default function RegistrationForm({ referrer }) {
 
   const onSubmit = async (data) => {
     setSubmitting(true);
+
     try {
-      // Add referrer from query
       const formData = { ...data, referrer };
-      console.log("Form submitted:", formData);
+      const response = await axios.post(
+        "http://localhost:5000/api/submit",
+        formData
+      );
+      console.log("Response:", response.data);
       navigate("/thank-you");
-    } catch (err) {
-      console.error("Submission failed:", err);
+    } catch (error) {
+      console.error("Submission failed:", error);
+      alert("שליחה נכשלה. אנא נסו שוב מאוחר יותר.");
     } finally {
       setSubmitting(false);
     }
