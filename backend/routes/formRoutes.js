@@ -1,6 +1,7 @@
 import express from "express";
 import axios from "axios";
 import { sendConfirmationEmail } from "../services/emailService.js";
+import { scheduleReminder } from "../services/whatsappService.js";
 
 const router = express.Router();
 
@@ -48,6 +49,11 @@ router.post("/submit", async (req, res) => {
 
     // Send confirmation email
     await sendConfirmationEmail(email, firstname);
+
+    // Schedule WhatsApp reminder
+    if (phone) {
+      scheduleReminder(phone, firstname);
+    }
 
     res
       .status(200)
