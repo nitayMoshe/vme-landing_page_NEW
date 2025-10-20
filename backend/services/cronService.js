@@ -2,9 +2,13 @@ import cron from "node-cron";
 import mongoose from "mongoose";
 import User from "../schemas/User.js"; // your Mongoose model
 import { sendWhatsapp } from "./whatsappService.js";
+import dotenv from "dotenv";
 
+
+dotenv.config();
+const uri = process.env.MONGO_URL;
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/landingPage", {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
