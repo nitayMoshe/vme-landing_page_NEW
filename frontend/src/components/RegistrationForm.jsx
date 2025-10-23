@@ -21,7 +21,7 @@ export default function RegistrationForm({ referrer }) {
       const response = await axios.post(
         "https://vme-landing-page.onrender.com/api/submit",
         formData
-        
+
       );
       console.log("Response:", response.data);
       navigate("/thank-you");
@@ -92,10 +92,11 @@ export default function RegistrationForm({ referrer }) {
         />
         {errors.email && <p>{errors.email.message}</p>}
 
-      <label style={{ display: "block", marginTop: "1rem", direction: "rtl" }}>
+   {/* Privacy Policy */}
+<label style={{ display: "block", marginTop: "1rem", direction: "rtl" }}>
   <input
     type="checkbox"
-    {...register("consent", { required: "יש לאשר את התנאים" })}
+    {...register("privacyPolicy", { required: "יש לאשר את מדיניות הפרטיות" })}
     style={{ marginLeft: "0.5rem" }}
   />
   אני מאשר/ת את{" "}
@@ -106,8 +107,18 @@ export default function RegistrationForm({ referrer }) {
     style={{ color: "#007bff", textDecoration: "underline" }}
   >
     מדיניות הפרטיות
-  </a>{" "}
-  ו
+  </a>
+</label>
+{errors.privacyPolicy && <p>{errors.privacyPolicy.message}</p>}
+
+{/* Terms of Use */}
+<label style={{ display: "block", marginTop: "0.6rem", direction: "rtl" }}>
+  <input
+    type="checkbox"
+    {...register("termsOfUse", { required: "יש לאשר את תנאי השימוש" })}
+    style={{ marginLeft: "0.5rem" }}
+  />
+  אני מסכים/ה ל{" "}
   <a
     href="https://vme-landingpage-videos.s3.eu-north-1.amazonaws.com/files/condotions.pdf"
     target="_blank"
@@ -117,6 +128,8 @@ export default function RegistrationForm({ referrer }) {
     תנאי השימוש
   </a>
 </label>
+{errors.termsOfUse && <p>{errors.termsOfUse.message}</p>}
+
 
         {errors.consent && <p>{errors.consent.message}</p>}
 
