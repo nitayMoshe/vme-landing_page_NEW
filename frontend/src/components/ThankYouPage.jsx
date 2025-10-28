@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo_heart from "../assets/Vme_logo-heart.png";
+import logo_heart from "../assets/images/Vme_logo-heart.png";
 import "../styles/thankyou.css";
 
 export default function ThankYouPage() {
@@ -18,7 +18,9 @@ export default function ThankYouPage() {
         <p>ברגעים אלו נשלחת אליכם הודעת מייל בה תוכלו לקבוע עם הצוות שלנו</p>
       </div>
       <h2 style={{ marginTop: "40px" }}>מחכים להכיר אתכם!</h2>
-      <Link to="/" className="link">חזרה לדף הראשי</Link>
+      <Link to="/" className="link">
+        חזרה לדף הראשי
+      </Link>
     </section>
   );
 }
