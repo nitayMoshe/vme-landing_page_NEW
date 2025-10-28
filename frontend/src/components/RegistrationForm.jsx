@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "../styles/form.css";
-import logo_m from "../assets/Vme_logo-M.png";
+import logo_m from "../assets/images/Vme_logo-M.png";
 
 export default function RegistrationForm({ referrer }) {
   const {

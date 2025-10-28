@@ -1,14 +1,16 @@
 import "../styles/personalNotes.css";
 import logo_me from "../assets/images/Vme_logo-ME.png";
-import ceo from "../assets/images/lina.png";
+import ceo from "../assets/images/ceo.png";
 import heart_key from "../assets/images/heart_key.png";
+import hands from "../assets/images/hands.png";
+import shield from "../assets/images/shield.png";
 
 export default function PersonalNotesSection() {
   return (
     <section>
       <div className="headline">
-        <img src={logo_me} alt="Logo me" />
-        <img src={ceo} alt="CEO picture" />
+        <img src={ceo} alt="CEO picture" className="ceo" />
+        <img src={logo_me} alt="Logo me" className="logo-me" />
       </div>
       <div className="alignRight">
         <h3>מסר אישי ממני, המייסדת...</h3>
@@ -41,7 +43,7 @@ export default function PersonalNotesSection() {
           אפליקציה כפי שחוויתם עד היום אלא פלטפורמה שנבנתה מתוך שליחות אמיתית.
         </p>
       </div>
-      <img src="" alt="hands with shield" />
+      <img src={shield} alt="hands with shield" />
       <div className="alignRight">
         <p>
           המייזם שלנו עבר דרך משמעותית בשנה האחרונה, בליווי מנטורים בכירים
@@ -50,7 +52,7 @@ export default function PersonalNotesSection() {
           שלכם למצוא זוגיות ואהבה ויותר מזה, ליהנות מהדרך אליה.
         </p>
       </div>
-      <img src="" alt="two man holding hands" />
+      <img src={hands} alt="two man holding hands" id="hands" />
       <div className="alignRight">
         <p>
           בימים הקרובים הפיילוט הייחודי שלנו יוצא לדרך ואנו בוחרים קבוצה איכותית

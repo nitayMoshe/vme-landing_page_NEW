@@ -11,6 +11,37 @@ section {
   align-items: center;
 }
 
+.headline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.headline > img {
+  display: block;
+  width: auto;
+  max-width: 45%;
+  max-height: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.headline > img.logo-me {
+  max-width: 30%;
+  max-height: 120px;
+  align-self: flex-end;
+  margin-bottom: 5rem;
+}
+
+.headline > img.ceo {
+  min-height: 400px;
+  background: none;
+}
+
 .alignRight {
   display: flex;
   flex-direction: column;
@@ -34,12 +65,88 @@ p {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 26px;
 }
 
-@media (max-width: 768px) {
+/* === Tablet view === */
+@media (max-width: 1024px) {
+  section {
+    padding: 0 1rem;
+  }
+
+  .headline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .headline > img.ceo {
+    min-height: auto;
+    width: 60%;
+    max-width: 280px;
+  }
+
+  .headline > img.logo-me {
+    margin-bottom: 0;
+    width: 40%;
+    max-width: 200px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  #hands {
+    width: 90%;
+    height: auto;
+    margin: 2rem 0;
+  }
+}
+
+/* === Mobile view === */
+@media (max-width: 600px) {
+  section {
+    padding: 0 0.5rem;
+  }
+
+  .headline {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .headline > img.ceo {
+    width: 80%;
+    max-width: 130px;
+    align-self: flex-start;
+  }
+
+  .headline > img.logo-me {
+    width: 50%;
+    max-width: 180px;
+    margin-top: -5.5rem;
+    align-self: flex-end;
+  }
+
   #heartKey {
+    margin: -4rem auto;
     width: 100%;
-    margin: -8rem auto;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .signature {
+    font-size: 1.1rem;
   }
 }
