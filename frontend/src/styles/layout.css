@@ -15,6 +15,12 @@ section {
   margin: auto;
 }
 
+section.problems-section {
+  padding: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
 section p {
   line-height: 1.6;
 }
