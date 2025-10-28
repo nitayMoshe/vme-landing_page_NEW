@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import TopBar from "./components/TopBar";
+import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import ProblemsSection from "./components/ProblemsSection";
 import AboutSection from "./components/AboutSection";
-import UniqunessSection from "./components/UniquenessSection";
+import UniquenessSection from "./components/UniquenessSection";
+import FounderMessageSection from "./components/FounderMessageSection";
 import PersonalNotesSection from "./components/PersonalNotesSection";
 import RegistrationForm from "./components/RegistrationForm";
 import ThankYouPage from "./components/ThankYouPage";
@@ -24,11 +28,13 @@ function App() {
           path="/"
           element={
             <>
+              <TopBar />
+              <Header />
               <HeroSection />
-              <AboutSection />
-              <UniqunessSection />
-              <PersonalNotesSection />
-              <RegistrationForm referrer={referrer} />
+              <ProblemsSection />
+              <UniquenessSection />
+              <FounderMessageSection />
+             
             </>
           }
         />
