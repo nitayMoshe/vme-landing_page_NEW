@@ -16,8 +16,6 @@ export default function TopBar() {
   const styles = {
     header: {
       position: "relative",
-      backgroundColor: "#c2d4d4",
-      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
       padding: "0.5rem 0",
       direction: "rtl",
       width: "100%",
