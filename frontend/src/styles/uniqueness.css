@@ -1,26 +1,35 @@
+/* === Headline: always single-line layout === */
 .headline {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
   gap: 12px;
-  margin-bottom: none;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #arrow {
-  opacity: 80%;
-  margin-top: 20px;
+  width: clamp(45px, 8vw, 80px);
+  height: auto;
+  opacity: 0.8;
+  margin: 0;
 }
 
 .headline h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 #logo {
-  opacity: 100%;
-  margin-bottom: 70px;
+  width: clamp(60px, 10vw, 120px);
+  height: auto;
+  opacity: 1;
+  transform: translateY(12px);
 }
 
 .checklist {
@@ -104,24 +113,137 @@ a::after {
   z-index: -1;
 }
 
+/* Phone image stays on the left edge */
 img[alt="phone"] {
   position: absolute;
-  right: 62.5%;
-  width: 25rem;
-  max-width: 60%;
+  right: 62.5%; /* restore desktop placement */
+  width: clamp(18rem, 25vw, 25rem);
   height: auto;
   z-index: 1;
-  opacity: 100%;
+  opacity: 1;
+  pointer-events: none;
+  transform: translateX(-15%); /* move slightly left, off-screen */
 }
 
+/* === Tablet view === */
+@media (max-width: 1024px) {
+  .headline {
+    gap: 8px;
+    scale: 0.9;
+  }
+
+  .headline h1 {
+    font-size: 2.3rem;
+  }
+
+  #arrow {
+    width: 120px;
+    margin-top: 10px;
+  }
+
+  #logo {
+    transform: translateY(-45px);
+    width: 100px;
+  }
+
+  .box {
+    font-size: 1.1rem;
+  }
+
+  img[alt="phone"] {
+    right: 55%;
+    width: clamp(14rem, 30vw, 22rem);
+    transform: translateX(-30%);
+  }
+}
+
+/* === Mobile view === */
 @media (max-width: 768px) {
-  a {
+  section {
+    padding: 0 1rem;
+  }
+
+  /* Keep headline inline === */
+  .headline {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  #arrow {
+    width: 50px;
+  }
+
+  .headline h1 {
+    font-size: 1.8rem;
+  }
+
+  #logo {
+    width: 65px;
+    transform: translateY(8px);
+  }
+
+  /* Checklist boxes stretch nicely on mobile */
+  .checklist {
+    width: 100%;
+  }
+
+  .box {
+    width: 95%;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.75rem;
+  }
+
+  .box img[alt="checkmark"] {
+    width: 32px;
+    margin: 0.5rem 0.75rem 0 0;
+  }
+
+  .box p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Button + phone layout */
+  .bottom-line {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .bottom-line a {
     width: auto;
     min-width: 140px;
     max-width: 160px;
     padding: 10px 24px;
-    margin: 40px auto 0;
+    margin: 20px auto 0;
     display: block;
     font-size: 1rem;
+  }
+
+  img[alt="phone"] {
+    right: 72.5%;
+    width: clamp(10rem, 35vw, 18rem);
+    transform: translateX(-25%);
+  }
+}
+
+/* === Extra small phones === */
+@media (max-width: 480px) {
+  .headline h1 {
+    font-size: 1.6rem;
+  }
+
+  #logo {
+    width: 65px;
+  }
+
+  .box p {
+    font-size: 0.95rem;
+  }
+
+  img[alt="phone"] {
+    width: 14rem;
+    left: -25%;
   }
 }
