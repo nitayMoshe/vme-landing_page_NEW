@@ -45,14 +45,14 @@
 }
 
 .transition-text {
-  font-size: clamp(20px, 4vw, 35px);
+  font-size: clamp(20px, 2vw, 35px);
   font-weight: 400;
   line-height: 1.5;
   margin: 2rem 0;
 }
 
 .list-text {
-  font-size: clamp(20px, 4vw, 35px);
+  font-size: 1.5rem;
   font-weight: 400;
   text-align: right;
 }
@@ -73,6 +73,7 @@
   justify-content: flex-start;
   gap: clamp(0.5rem, 2vw, 1rem);
   width: 100%;
+  height: clamp(50px, 5vw, 80px);
 }
 
 /* === Arrow icon === */
@@ -104,6 +105,6 @@
   }
 
   .list-text {
-    font-size: clamp(18px, 5vw, 28px);
+    font-size: 1.1rem;
   }
 }
