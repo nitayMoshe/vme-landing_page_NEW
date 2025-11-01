@@ -13,3 +13,5 @@ export default function Header() {
     </section>
   );
 }
+
+// TODO: Make the whole component shorter in height on all devices.
