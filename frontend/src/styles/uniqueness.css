@@ -81,13 +81,13 @@ img[alt="checkmark"] {
   position: relative;
 }
 
-.bottom-line a {
+#registrationLink {
   margin: 20px auto;
   position: relative;
   z-index: 2;
 }
 
-a {
+#registrationLink {
   position: relative;
   align-items: center;
   justify-content: center;
@@ -105,7 +105,7 @@ a {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-a::after {
+#registrationLink::after {
   content: "";
   position: absolute;
   bottom: 5px;
