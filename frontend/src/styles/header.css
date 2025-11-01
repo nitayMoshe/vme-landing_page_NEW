@@ -1,75 +1,97 @@
 /* Isolate the background */
 .header-wrapper {
-  width: 100%;
-  max-width: none;
-  height: auto;
+  width: 100vw;
+  max-width: 100%;
+  height: clamp(140px, 25vw, 280px); /* slightly shorter */
+  min-height: fit-content;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
   background-color: #eef3f3;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   padding: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 /* Keep the content centered */
 .header-inner {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
-  height: auto;
-  padding: 1rem;
-  gap: 1rem;
+  gap: 0.35rem;
+  padding: 0.4rem 1rem;
   text-align: center;
 }
 
 .logo {
-  height: clamp(100px, 20vw, 150px);
+  height: clamp(56px, 10vw, 96px); /* smaller across viewports */
   width: auto;
-  max-width: 300px;
+  max-width: 280px;
   object-fit: contain;
+  display: block;
+  margin: 0;
+  opacity: 1;
 }
 
 .header-text {
-  font-size: clamp(1.2rem, 4vw, 2.2rem);
-  font-weight: 800;
-  line-height: 1.5;
+  width: 65%;
+  max-width: 500px;
+  font-size: clamp(2rem, 4vw, 1.6rem); /* slightly smaller */
+  font-weight: 700;
+  line-height: 1.25; /* tighter line-height */
   margin: 0;
-  word-wrap: break-word;
+  padding: 1rem 0;
   text-align: center;
 }
 
 /* === Tablet view === */
 @media (max-width: 1024px) {
   .header-wrapper {
-    padding: 1.5rem 0;
+    padding: 0.55rem 0;
+    height: clamp(300px, 25vw, 450px);
   }
 
-  .header-text {
-    font-size: clamp(1.1rem, 3vw, 1.8rem);
-    text-wrap: wrap;
+  .header-inner {
+    gap: 0.3rem;
+    padding: 0.3rem 0.75rem;
   }
 
   .logo {
-    height: clamp(90px, 18vw, 130px);
+    height: clamp(52px, 12vw, 86px);
+  }
+
+  .header-text {
+    font-size: clamp(0.98rem, 4vw, 3rem);
   }
 }
 
 /* === Mobile view === */
-@media (max-width: 600px) {
+@media (max-width: 678px) {
   .header-wrapper {
-    padding: 1rem 0;
+    padding: 0.45rem 0;
   }
 
-  .header-text {
-    font-size: 1.3rem;
-    line-height: 1.4;
-    padding: 0 0.5rem;
+  .header-inner {
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
   }
 
   .logo {
-    height: 90px;
+    height: clamp(48px, 22vw, 94px);
+  }
+
+  .header-text {
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 }
