@@ -34,7 +34,7 @@
 
 .heading {
   font-size: clamp(28px, 5vw, 44px);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 2rem;
 }
 
