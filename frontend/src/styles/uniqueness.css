@@ -43,6 +43,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .box {
@@ -50,26 +51,23 @@
   flex-direction: row;
   background-color: white;
   border-radius: 20px;
-  width: 80%;
+  width: 100%;
   margin: 16px 0;
   justify-self: center;
   align-self: center;
-}
-
-.box img[alt="checkmark"] {
-  margin-right: 16px;
 }
 
 img[alt="checkmark"] {
   width: 42px;
   height: auto;
   margin-top: 16px;
+  margin-right: 16px;
   opacity: 100;
 }
 
 .box p {
   margin-right: 12px;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   align-self: center;
 }
 
