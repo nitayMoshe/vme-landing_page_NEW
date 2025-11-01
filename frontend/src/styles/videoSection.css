@@ -1,0 +1,114 @@
+section.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+  direction: rtl;
+}
+
+/* === Video container === */
+.video-container {
+  width: 100%;
+  max-width: clamp(380px, 22vw, 1000px);
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.video-container video,
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 14;
+  border-radius: clamp(8px, 2vw, 12px);
+  object-fit: cover;
+}
+
+/* === Text content === */
+.text-container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.text-container h2 {
+  color: #cf1c71;
+  font-size: clamp(1.2rem, 4.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
+
+/* === Logo section === */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: clamp(1.5rem, 4vw, 2rem) 0;
+}
+
+.logo-container img {
+  height: 150px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  opacity: 1;
+  margin-top: 0;
+}
+
+/* === Platform heading === */
+.platform-heading {
+  color: #cf1c71;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 500px;
+  padding: 0 1rem;
+}
+
+/* === Tablet view === */
+@media (max-width: 1024px) {
+  .video-container {
+    max-width: clamp(350px, 70vw, 480px);
+    padding-top: 3rem;
+  }
+
+  .logo-container img {
+    height: 120px;
+  }
+
+  .text-container h2,
+  .platform-heading {
+    font-size: clamp(1.1rem, 5vw, 1.7rem);
+  }
+}
+
+/* === Mobile view === */
+@media (max-width: 768px) {
+  section.video-section {
+    min-height: auto;
+    padding: 5rem 0.5rem;
+  }
+
+  .video-container {
+    max-width: 70vw;
+    height: auto;
+  }
+
+  .logo-container img {
+    height: 90px;
+  }
+
+  .text-container h2,
+  .platform-heading {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+}
