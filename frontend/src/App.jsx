@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
 import UniqunessSection from "./components/UniquenessSection";
 import PersonalNotesSection from "./components/PersonalNotesSection";
 import RegistrationForm from "./components/RegistrationForm";
@@ -30,7 +29,6 @@ function App() {
               <Header />
               <HeroSection />
               <ProblemsSection />
-              <AboutSection />
               <UniqunessSection />
               <PersonalNotesSection />
               <RegistrationForm referrer={referrer} />
