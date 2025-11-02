@@ -196,6 +196,11 @@ img[alt="phone"] {
     height: auto;
     transform: translateX(-10%);
   }
+
+  #registrationLink {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
 }
 
 /* === Extra small phones === */
@@ -227,5 +232,10 @@ img[alt="phone"] {
     width: clamp(20rem, 50vw, 60rem);
     max-width: 80%;
     transform: translateX(2%);
+  }
+
+  #registrationLink {
+    font-size: 0.9rem;
+    padding: 8px 20px;
   }
 }
