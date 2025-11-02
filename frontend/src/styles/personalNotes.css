@@ -137,7 +137,7 @@ h3 {
 }
 
 /* === Mobile view === */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   section {
     padding: 0 0.5rem;
   }
