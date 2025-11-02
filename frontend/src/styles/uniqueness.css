@@ -191,9 +191,10 @@ img[alt="phone"] {
   }
 
   img[alt="phone"] {
-    right: 72.5%;
-    width: clamp(10rem, 35vw, 18rem);
-    transform: translateX(-25%);
+    width: clamp(20rem, 80vw, 40rem);
+    max-width: 60%;
+    height: auto;
+    transform: translateX(-10%);
   }
 }
 
@@ -223,7 +224,8 @@ img[alt="phone"] {
   }
 
   img[alt="phone"] {
-    width: 14rem;
-    left: -25%;
+    width: clamp(20rem, 50vw, 60rem);
+    max-width: 80%;
+    transform: translateX(2%);
   }
 }
