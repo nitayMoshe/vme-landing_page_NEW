@@ -133,7 +133,7 @@ img[alt="phone"] {
 @media (max-width: 1024px) {
   .headline {
   }
-  
+
   .box {
     font-size: 1.1rem;
   }
@@ -237,5 +237,12 @@ img[alt="phone"] {
   #registrationLink {
     font-size: 0.9rem;
     padding: 8px 20px;
+  }
+}
+
+@media (max-width: 310px) {
+  img[alt="phone"] {
+    width: clamp(18rem, 60vw, 50rem);
+    top: -30px;
   }
 }
