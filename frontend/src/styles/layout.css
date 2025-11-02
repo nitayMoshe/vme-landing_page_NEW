@@ -3,6 +3,8 @@
 body {
   direction: rtl;
   font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  width: 100%;
   background-color: #d8e5e5;
   margin: 0;
   padding: 0;
