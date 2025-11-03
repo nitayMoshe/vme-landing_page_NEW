@@ -64,7 +64,7 @@ export default function PersonalNotesSection() {
           אתכם להירשם ולתאם איתי שיחה אישית כדי לבדוק התאמה לפיילוט ולתת לכם את
           המקום שלכם במסע הזה.
         </p>
-        <p className="signature">לינה מאירה</p>
+        <p className="signature">לינה מיארה</p>
         <p>מייסדת שותפה ומנכ"לית V-me</p>
       </div>
     </section>
