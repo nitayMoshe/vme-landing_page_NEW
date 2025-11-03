@@ -7,7 +7,7 @@ export default function Header() {
       <div className="header-inner">
         <img src={logoHeart} alt="Vme logo" className="logo" />
         <p className="header-text">
-          פלפורמה ייחודית שעומדת לשנות את עולם ההכרויות כפי שהכרתם אותו
+          פלטפורמה ייחודית שעומדת לשנות את עולם ההכרויות כפי שהכרתם אותו
         </p>
       </div>
     </section>
