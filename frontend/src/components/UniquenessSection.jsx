@@ -23,7 +23,7 @@ export default function UniquenessSection() {
         </div>
         <div className="box">
           <img src={checkmark} alt="checkmark" />
-          <p>תצפו בפרופילים מבוססי וידאו שיאפשרו לעוד חושים שלכם לעבוד</p>
+          <p>תתמגנטו לאופי ואנרגיה מעבר למראה</p>
         </div>
         <div className="box">
           <img src={checkmark} alt="checkmark" />
