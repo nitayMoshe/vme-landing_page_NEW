@@ -65,23 +65,26 @@
   gap: 0.5rem;
   margin-bottom: 2rem;
   max-width: 800px;
+  width: 90%;
 }
 
 .list-item {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: clamp(0.5rem, 2vw, 1rem);
   width: 100%;
-  height: clamp(50px, 5vw, 80px);
+  padding: 0.5rem 0;
+  /* height: clamp(50px, 5vw, 80px); */
 }
 
 /* === Arrow icon === */
 .arrow {
   width: clamp(1.5rem, 4vw, 2.5rem);
   height: auto;
+  margin-top: 0.1rem;
   overflow: hidden;
-  padding-bottom: 10px;
   opacity: 1;
 }
 
@@ -92,11 +95,7 @@
   }
 
   .list-container {
-    align-items: center;
-  }
-
-  .list-item {
-    justify-content: flex-start;
+    align-items: stretch;
   }
 
   .arrow {
