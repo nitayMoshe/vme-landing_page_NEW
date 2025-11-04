@@ -9,9 +9,9 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   phone: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
-  referrer: { type: String, required: false },
+  referrer: { type: String, required: true },
   calendlyBooked: { type: Boolean, default: false },
-  reminderSent: {type: Boolean, default: false},
+  reminderSent: { type: Boolean, default: false },
 });
 
 const User = mongoose.model("User", userSchema);
