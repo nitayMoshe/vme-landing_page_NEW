@@ -1,9 +1,7 @@
 import cron from "node-cron";
 import mongoose from "mongoose";
 import User from "../schemas/User.js"; // your Mongoose model
-// import { sendWhatsapp } from "./whatsappService.js";
 import dotenv from "dotenv";
-
 
 dotenv.config();
 const uri = process.env.MONGO_URL;
@@ -16,12 +14,14 @@ mongoose.connect(uri, {
 // --- Cron job ---
 // Run every 10 minutes between 9:00–20:59, Sunday to Friday
 cron.schedule("*/1 9-20 * * 0-5", async () => {
-console.log("RUNNING CRON");
+  console.log("RUNNING CRON");
 
   try {
     // Get current Israel local time
     const now = new Date();
-    const israelTime = now.toLocaleString("en-US", { timeZone: "Asia/Jerusalem" });
+    const israelTime = now.toLocaleString("en-US", {
+      timeZone: "Asia/Jerusalem",
+    });
     const currentHour = new Date(israelTime).getHours();
     const currentDay = new Date(israelTime).getDay(); // 6 = Saturday
 
@@ -39,16 +39,6 @@ console.log("RUNNING CRON");
       calendlyBooked: false,
       reminderSent: false,
     });
-
-    // for (const user of usersToRemind) {
-    //   await sendWhatsapp(
-    //     `whatsapp:${user.phoneNumber}`,
-    //     `שלום ${user.name}, שכחת לקבוע פגישה עם היוצר של האפליקציה? לחץ כאן כדי לקבוע: https://calendly.com/yourname/beta-call`
-    //   );
-    //   user.reminderSent = true;
-    //   await user.save();
-    //   console.log(`Sent WhatsApp reminder to ${user.firstname}`);
-    // }
   } catch (err) {
     console.error("Cron job error:", err);
   }
