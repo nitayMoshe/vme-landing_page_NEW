@@ -27,6 +27,13 @@ export async function sendConfirmationEmail(to, firstname) {
           ניתן כבר לקבוע שיחת היכרות קצרה כאן:
           <a href=${calendlyLink}>Calendly</a>
         </p>
+        <p>
+        במידה ונתקלתם בתקלה בתיאום פגישה מוזמנים לכתוב לנו נדאג לשוב אליכם בהקדם האפשרי🙏:
+        </p>
+        <a href="mailto: eran@vme-value.com">eran@vme-value.com</a>
+        <br/>
+        <br/>
+        <p>מחכים לראותכם!</p>
         <p>צוות V-Me❤</p>
       </div>
     `,
