@@ -10,6 +10,7 @@ export default function RegistrationForm({ referrer }) {
     register,
     handleSubmit,
     formState: { errors },
+    getValues,
   } = useForm();
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -56,20 +57,24 @@ export default function RegistrationForm({ referrer }) {
             {...register("firstname", { required: "שדה חובה" })}
             placeholder="שם פרטי"
           />
-          {errors.firstname && <p>{errors.firstname.message}</p>}
+          {errors.firstname && (
+            <p className="error-message">{errors.firstname.message}</p>
+          )}
 
           <input
             {...register("lastname", { required: "שדה חובה" })}
             placeholder="שם משפחה"
           />
-          {errors.lastname && <p>{errors.lastname.message}</p>}
+          {errors.lastname && (
+            <p className="error-message">{errors.lastname.message}</p>
+          )}
 
           <select {...register("sex", { required: "בחר אפשרות" })}>
             <option value="">מין</option>
             <option value="man">גבר</option>
             <option value="woman">אישה</option>
           </select>
-          {errors.sex && <p>{errors.sex.message}</p>}
+          {errors.sex && <p className="error-message">{errors.sex.message}</p>}
 
           <input
             {...register("age", {
@@ -79,20 +84,24 @@ export default function RegistrationForm({ referrer }) {
             placeholder="גיל"
             type="number"
           />
-          {errors.age && <p>{errors.age.message}</p>}
+          {errors.age && <p className="error-message">{errors.age.message}</p>}
 
           <input
             {...register("city", { required: "שדה חובה" })}
             placeholder="עיר"
           />
-          {errors.city && <p>{errors.city.message}</p>}
+          {errors.city && (
+            <p className="error-message">{errors.city.message}</p>
+          )}
 
           <input
             {...register("phone", { required: "שדה חובה" })}
             placeholder="טלפון"
             type="tel"
           />
-          {errors.phone && <p>{errors.phone.message}</p>}
+          {errors.phone && (
+            <p className="error-message">{errors.phone.message}</p>
+          )}
 
           <input
             {...register("email", {
@@ -105,7 +114,22 @@ export default function RegistrationForm({ referrer }) {
             placeholder='דוא"ל'
             type="email"
           />
-          {errors.email && <p>{errors.email.message}</p>}
+          {errors.email && (
+            <p className="error-message">{errors.email.message}</p>
+          )}
+
+          <input
+            {...register("confirmEmail", {
+              required: "שדה חובה",
+              validate: (value) =>
+                value === getValues("email") || "כתובות המייל אינן תואמות",
+            })}
+            placeholder='אישור דוא"ל'
+            type="email"
+          />
+          {errors.confirmEmail && (
+            <p className="error-message">{errors.confirmEmail.message}</p>
+          )}
         </div>
 
         {/* Privacy Policy */}
@@ -118,7 +142,6 @@ export default function RegistrationForm({ referrer }) {
               {...register("privacyPolicy", {
                 required: "יש לאשר את מדיניות הפרטיות",
               })}
-              style={{ marginLeft: "0.5rem" }}
             />
             אני מאשר/ת את{" "}
             <a
@@ -130,7 +153,9 @@ export default function RegistrationForm({ referrer }) {
               מדיניות הפרטיות
             </a>
           </label>
-          {errors.privacyPolicy && <p>{errors.privacyPolicy.message}</p>}
+          {errors.privacyPolicy && (
+            <p className="error-message">{errors.privacyPolicy.message}</p>
+          )}
 
           {/* Terms of Use */}
           <label
@@ -141,7 +166,6 @@ export default function RegistrationForm({ referrer }) {
               {...register("termsOfUse", {
                 required: "יש לאשר את תנאי השימוש",
               })}
-              style={{ marginLeft: "0.5rem" }}
             />
             אני מסכים/ה ל{" "}
             <a
@@ -153,7 +177,26 @@ export default function RegistrationForm({ referrer }) {
               תנאי השימוש
             </a>
           </label>
-          {errors.termsOfUse && <p>{errors.termsOfUse.message}</p>}
+          {errors.termsOfUse && (
+            <p className="error-message">{errors.termsOfUse.message}</p>
+          )}
+
+          {/* Consent to notifications */}
+          <label
+            style={{ display: "block", marginTop: "0.6rem", direction: "rtl" }}
+          >
+            <input
+              type="checkbox"
+              {...register("notifications", {
+                required: "לא ניתן להתקדם ללא אישור הודעות הדיוור",
+              })}
+            />
+            אני מאשר לקבל עדכונים והטבות הקשורות לשירות, בזמנים סבירים ובאמצעים
+            מקובלים (כמו מייל, הודעה או וואטסאפ), בהתאם למדיניות הפרטיות.
+          </label>
+          {errors.notifications && (
+            <p className="error-message">{errors.notifications.message}</p>
+          )}
         </div>
 
         {errors.consent && <p>{errors.consent.message}</p>}

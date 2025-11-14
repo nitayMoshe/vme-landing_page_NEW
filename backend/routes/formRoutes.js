@@ -7,12 +7,35 @@ const URL = "https://api.hubapi.com/crm/v3/objects/contacts";
 const router = express.Router();
 
 router.post("/submit", async (req, res) => {
-  const { firstname, lastname, sex, age, city, phone, email, referrer } =
-    req.body;
+  const {
+    firstname,
+    lastname,
+    sex,
+    age,
+    city,
+    phone,
+    email,
+    confirmEmail,
+    referrer,
+  } = req.body;
 
   // 1. --- Validation ---
-  if (!firstname || !lastname || !sex || !age || !city || !phone || !email) {
+  if (
+    !firstname ||
+    !lastname ||
+    !sex ||
+    !age ||
+    !city ||
+    !phone ||
+    !email ||
+    !confirmEmail
+  ) {
     return res.status(400).json({ message: "נא למלא את כל השדות" });
+  }
+
+  // Email validation
+  if (email !== confirmEmail) {
+    return res.status(400).json({ message: "כתובות המייל אינן תואמות" });
   }
 
   if (!referrer) {
