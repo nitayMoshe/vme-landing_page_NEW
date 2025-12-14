@@ -6,7 +6,7 @@ import UniqunessSection from "./components/UniquenessSection";
 import PersonalNotesSection from "./components/PersonalNotesSection";
 import RegistrationForm from "./components/RegistrationForm";
 import ThankYouPage from "./components/ThankYouPage";
-import topBar from "./components/topBar";
+import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import ProblemsSection from "./components/ProblemsSection";
 function App() {
@@ -25,7 +25,7 @@ function App() {
           path="/"
           element={
             <>
-              <topBar />
+              <TopBar />
               <Header />
               <HeroSection />
               <ProblemsSection />
