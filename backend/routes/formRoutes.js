@@ -1,12 +1,21 @@
 import express from "express";
 import axios from "axios";
+import cors from "cors";
 import { sendConfirmationEmail } from "../services/emailService.js";
 import User from "../schemas/User.js";
 
 const URL = "https://api.hubapi.com/crm/v3/objects/contacts";
 const router = express.Router();
 
+// Ensure preflight for this endpoint is handled and logs can capture it
+router.options("/submit", cors());
+
 router.post("/submit", async (req, res) => {
+  console.log("Received POST /api/submit", {
+    ip: req.ip,
+    path: req.path,
+    bodyKeys: Object.keys(req.body || {}),
+  });
   const {
     firstname,
     lastname,
