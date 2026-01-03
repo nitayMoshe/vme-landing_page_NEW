@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 export async function sendConfirmationEmail(to, firstname) {
   dotenv.config();
-  const calendlyLink = process.env.CALENDLY_LINK;
+  // const calendlyLink = process.env.CALENDLY_LINK;
   const user = process.env.EMAIL_USER;
   const pass = process.env.EMAIL_PASS;
 

@@ -20,10 +20,7 @@ export default function RegistrationForm({ referrer }) {
 
     try {
       const formData = { ...data, referrer };
-      const response = await axios.post(
-        "https://vme-landing-page.onrender.com/api/submit",
-        formData
-      );
+      const response = await axios.post("/api/submit", formData);
       console.log("Response:", response.data);
       navigate("/thank-you");
     } catch (error) {
