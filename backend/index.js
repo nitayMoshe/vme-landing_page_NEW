@@ -7,6 +7,7 @@ import formRoutes from "./routes/formRoutes.js";
 
 const allowedOrigins = [
   "https://vme-landing-page.onrender.com",
+  "https://vme-landing-page-new-1.onrender.com",
   "http://localhost:5173",
 ];
 
