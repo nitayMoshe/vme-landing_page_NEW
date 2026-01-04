@@ -2,7 +2,7 @@ import express from "express";
 import axios from "axios";
 import cors from "cors";
 import { sendConfirmationEmail } from "../services/emailService.js";
-// import User from "../schemas/User.js";
+import User from "../schemas/User.js";
 
 const URL = "https://api.hubapi.com/crm/v3/objects/contacts";
 const router = express.Router();
@@ -70,16 +70,16 @@ router.post("/submit", async (req, res) => {
   }
 
   // 3. --- All checks passed, proceed to create user ---
-  // const user = new User({
-  //   firstname,
-  //   lastname,
-  //   sex,
-  //   age,
-  //   city,
-  //   phone,
-  //   email,
-  //   referrer,
-  // });
+  const user = new User({
+    firstname,
+    lastname,
+    sex,
+    age,
+    city,
+    phone,
+    email,
+    referrer,
+  });
 
   // 4. --- Try the external services (HubSpot and email) ---
   try {
@@ -160,11 +160,11 @@ router.post("/calendly/webhook", async (req, res) => {
       console.log("New Calendly booking from:", email);
 
       // Update the user in MongoDB
-      // await User.findOneAndUpdate(
-      //   { email },
-      //   { calendlyBooked: true },
-      //   { new: true }
-      // );
+      await User.findOneAndUpdate(
+        { email },
+        { calendlyBooked: true },
+        { new: true }
+      );
     }
 
     res.status(200).send("OK");
