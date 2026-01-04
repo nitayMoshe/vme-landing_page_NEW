@@ -20,7 +20,8 @@ export default function RegistrationForm({ referrer }) {
 
     try {
       const formData = { ...data, referrer };
-      const response = await axios.post("/api/submit", formData);
+      const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/api/submit`;
+      const response = await axios.post(apiUrl, formData);
       console.log("Response:", response.data);
       navigate("/thank-you");
     } catch (error) {
