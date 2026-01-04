@@ -104,6 +104,18 @@ router.post("/submit", async (req, res) => {
       },
     });
 
+    // Log HubSpot's response for debugging
+    console.log("HubSpot API Response Status:", hubspotResponse.status);
+    console.log("HubSpot API Response Body:", JSON.stringify(hubspotResponse.data, null, 2));
+
+    // Defensive check for HubSpot success
+    if (hubspotResponse.data && hubspotResponse.data.id) {
+       console.log(`Hubspot contact created successfully with ID: ${hubspotResponse.data.id}`);
+    } else {
+      // If there's no ID, something is wrong despite a 2xx response
+      throw new Error("HubSpot contact creation failed despite 2xx response.");
+    }
+
     // Send confirmation email
     await sendConfirmationEmail(email, firstname);
 

@@ -43,5 +43,7 @@ export async function sendConfirmationEmail(to, firstname) {
     console.log("Confirmation email sent to", to);
   } catch (error) {
     console.error("Email send failed:", error.message);
+    // Re-throw the error to be caught by the route handler
+    throw error;
   }
 }
